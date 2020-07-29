@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+      #bt{
+         overflow: hidden;
+          border: 1px solid #ccc;
+         /* padding:10px 12px;*/
+          background-color: #f1f1f1;
+      }
+      button{
+        border: none;
+        padding:10px 12px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        
+      }
+      .conte{
+        display: none;
+        border:1px solid;
+      }
+      .show{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bt">
+      <button class="ctab" onclick="myfunction(event,'a')">按钮1</button>
+      <button class="ctab" onclick="myfunction(event,'b')">按钮2</button>
+      <button class="ctab" onclick="myfunction(event,'c')">按钮3</button>
+    </div>
+    
+  <div id="a" class="conte show">
+    <div> 
+    <p>选择1</p>
+    </div>
+    
+  </div>
+  <div id="b" class=conte>
+    <p>选择2</p>
+  </div>
+  <div id="c" class="conte">
+    <p>选择3</p>
+  </div>
+  </body>
+  <script type="text/javascript">
+      
+      
+      function myfunction(evt,open){
+        var tabc = document.getElementsByClassName("ctab");
+        console.log(tabc);
+        var con = document.getElementsByClassName("conte");
+        console.log(con)
+        for (var i = 0;i<con.length;i++) {
+          con[i].style.display = "none";
+        }
+        document.getElementById(open).style.display="block";
+      }
+  </script>
+</html>
